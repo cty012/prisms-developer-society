@@ -1,7 +1,8 @@
 /* VARIABLES */
-/* font */
+// font
 @font-family: Cambria;
-/* position */
+
+// position
 @height: 100px;
 @icon-holder-width: 100px;
 @icon-width: 60px;
@@ -11,15 +12,17 @@
 @navigation-bar-width: @navigation-block-width * @navigation-bar-num;
 
 /* STYLES */
-/* header (100% * 150) */
+// header (100% * 150)
 #header {
     width: 100%;
     height: @height;
     background-color: #282828;
     position: sticky;
+    position: -webkit-sticky;
+    top: 0;
 }
 
-/* icon (100 * 100) */
+// icon (100 * 100)
 #icon-holder {
     width: @icon-holder-width;
     height: @height;
@@ -27,12 +30,12 @@
 }
 
 #icon {
-    margin: calc((@icon-holder-width - @icon-width) / 2);
     width: 60px;
     height: 60px;
+    margin: calc((@icon-holder-width - @icon-width) / 2);
 }
 
-/* title (350 * 100) */
+// title (350 * 100)
 #title {
     font-family: Cambria;
     font-size: 30px;
@@ -42,26 +45,22 @@
     float: left;
 }
 
-/* navigation-bar (300 * 100): HOME, GAMES, ABOUT */
+// navigation-bar (300 * 100): HOME, GAMES, ABOUT
 #navigation-bar {
     width: @navigation-bar-width;
     height: @height;
     margin-left: calc((100% - @navigation-bar-width + @icon-holder-width + @title-width) / 2);
 }
 
-#navigation-block {
+.navigation-block {
     font-family: Cambria;
     font-size: 22px;
-    color: #bbbbbb;
-    &:hover {
-        color: #ffffff;
-    }
     .center();
     width: @navigation-block-width;
     float: left;
 }
 
-/* class */
+/* UTILS */
 .center {
     text-align: center;
     line-height: @height;

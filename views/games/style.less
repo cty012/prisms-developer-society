@@ -1,0 +1,60 @@
+/* VARIABLES */
+@game-info-margin: 100px;
+@game-block-num: 2;
+
+/* STYLES */
+/* game list */
+#game-list {
+    width: calc(100% - @game-info-margin * 2);
+    margin: 100px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.game-block {
+    margin: 20px 0px;
+    width: percentage(1/@game-block-num);
+}
+
+/* game info */
+.game-img {
+    width: 37.5%;
+    float: left;
+}
+
+.game-info {
+    padding: 0px 30px;
+    width: calc(62.5% - 60px);
+    height: 100%;
+    float: left;
+}
+
+.game-info-name {
+    font-family: Cambria;
+    font-size: 30px;
+    color: #bbbbbb;
+    width: 100%;
+    height: 20%;
+}
+
+.game-info-item {
+    .game-info-name();
+    font-size: 18px;
+}
+
+/* platform */
+
+/* UTILS */
+.tag {
+    font-family: Cambria;
+    font-size: 16px;
+    color: #bbbbbb;
+    background-color: #666666;
+    &:hover {
+        background-color: #808080;
+    }
+    border-radius: 6px;
+    margin-left: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
