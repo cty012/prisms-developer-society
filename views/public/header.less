@@ -1,0 +1,69 @@
+/* VARIABLES */
+/* font */
+@font-family: Cambria;
+/* position */
+@height: 100px;
+@icon-holder-width: 100px;
+@icon-width: 60px;
+@title-width: 350px;
+@navigation-block-width: 150px;
+@navigation-bar-num: 3;
+@navigation-bar-width: @navigation-block-width * @navigation-bar-num;
+
+/* STYLES */
+/* header (100% * 150) */
+#header {
+    width: 100%;
+    height: @height;
+    background-color: #282828;
+    position: sticky;
+}
+
+/* icon (100 * 100) */
+#icon-holder {
+    width: @icon-holder-width;
+    height: @height;
+    float: left;
+}
+
+#icon {
+    margin: calc((@icon-holder-width - @icon-width) / 2);
+    width: 60px;
+    height: 60px;
+}
+
+/* title (350 * 100) */
+#title {
+    font-family: Cambria;
+    font-size: 30px;
+    .center();
+    color: #bbbbbb;
+    width: @title-width;
+    float: left;
+}
+
+/* navigation-bar (300 * 100): HOME, GAMES, ABOUT */
+#navigation-bar {
+    width: @navigation-bar-width;
+    height: @height;
+    margin-left: calc((100% - @navigation-bar-width + @icon-holder-width + @title-width) / 2);
+}
+
+#navigation-block {
+    font-family: Cambria;
+    font-size: 22px;
+    color: #bbbbbb;
+    &:hover {
+        color: #ffffff;
+    }
+    .center();
+    width: @navigation-block-width;
+    float: left;
+}
+
+/* class */
+.center {
+    text-align: center;
+    line-height: @height;
+    height: @height
+}
