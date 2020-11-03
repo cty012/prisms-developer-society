@@ -64,7 +64,7 @@ function getTagHTML(tagList) {
 function getPlatformHTML(platformList) {
     html = ``;
     platformList.forEach(platform => {
-        html += `<a class="tag" href="/games/search/?platforms=${platform}">${platform}</a>`;
+        html += `<a href="/games/search/?platforms=${platform}"><img class="platform-img" src="/resources/icons/platforms/${platform}.svg"></a>`;
     });
     return `<div class="game-info-item">Platforms:${html}</div>`;
 }
