@@ -1,0 +1,126 @@
+/* VARIABLES */
+// position
+@width: 1200px;
+@carousel-width: 720px;
+@carousel-height: 405px;
+@game-info-padding-w: 40px;
+@game-info-padding-h: 40px;
+@game-info-width: @width - @carousel-width - @game-info-padding-w * 2;
+@game-info-height: @carousel-height - @game-info-padding-h * 2;
+
+/* STYLE */
+/* game title */
+#game-title {
+    font-size: 50px;
+    color: #ffffff;
+    width: calc(@width - 20px);
+    padding-left: 20px;
+    margin-top: 40px;
+    margin-left: calc((100% - @width) / 2);
+}
+
+/* game introduction */
+#game-introduction {
+    background-color: #444848;
+    width: @width;
+    height: @carousel-height;
+    margin-top: 25px;
+    margin-left: calc((100% - @width) / 2);
+}
+
+// game carousel
+#game-carousel {
+    overflow: hidden;
+    width: @carousel-width;
+    height: @carousel-height;
+    float: left;
+}
+
+#game-img {
+    width: @carousel-width;
+    height: @carousel-height;
+}
+
+// game info
+#game-info {
+    width: @game-info-width;
+    height: 100%;
+    padding: @game-info-padding-h @game-info-padding-w;
+    float: left;
+}
+
+.game-info-item {
+    font-size: 20px;
+    color: #eeeeee;
+    overflow: wrap;
+    width: @game-info-width;
+    height: calc(0.18 * @game-info-height);
+}
+
+.platform-img {
+    margin-left: 16px;
+    background-color: #505555;
+    &:hover {
+        background-color: #808080;
+    }
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    vertical-align: middle;
+}
+
+#game-info-download {
+    .game-info-item();
+    height: calc(0.28 * @game-info-height);
+}
+
+.download-button {
+    color: #eeeeee;
+    background-color: #666666;
+    &:hover {
+        background-color: #808080;
+    }
+    font-size: 30px;
+    text-align: center;
+    line-height: calc(0.28 * @game-info-height);
+    border-radius: 20px;
+    width: 300px;
+    height: calc(0.28 * @game-info-height);
+    margin-left: calc((@game-info-width - 300px) / 2);
+}
+
+/* game-description */
+#game-description {
+    color: #eeeeee;
+    width: calc(@width - 40px);
+    margin: 20px calc((100% - @width) / 2) 100px;
+    padding: 0px 20px;
+}
+
+/* UTILS */
+.tag {
+    font-size: 16px;
+    color: #eeeeee;
+    background-color: #666666;
+    &:hover {
+        background-color: #808080;
+    }
+    border-radius: 10px;
+    margin-left: 8px;
+    padding: 4px 6px;
+}
+
+h1 {
+    font-size: 36px;
+    line-height: 2;
+}
+
+h2 {
+    font-size: 28px;
+    line-height: 1.8;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.8;
+}
