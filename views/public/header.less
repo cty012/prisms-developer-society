@@ -1,12 +1,12 @@
 /* VARIABLES */
 // font
-@font-family: Cambria;
+@font: HeaderFont;
 
 // position
 @height: 100px;
 @icon-holder-width: 100px;
 @icon-width: 60px;
-@title-width: 350px;
+@title-width: 400px;
 @navigation-block-width: 150px;
 @navigation-bar-num: 3;
 @navigation-bar-width: @navigation-block-width * @navigation-bar-num;
@@ -37,7 +37,7 @@
 
 // title (350 * 100)
 #title {
-    font-family: Cambria;
+    font-family: @font;
     font-size: 30px;
     .center();
     color: #bbbbbb;
@@ -53,7 +53,7 @@
 }
 
 .navigation-block {
-    font-family: Cambria;
+    font-family: @font;
     font-size: 22px;
     .center();
     width: @navigation-block-width;

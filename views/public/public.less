@@ -1,4 +1,17 @@
+@font-face {
+    font-family: HeaderFont;
+    src: url('/resources/fonts/quicksand.ttf') format('truetype'),
+         url('/resources/fonts/quicksand.woff') format('truetype');
+}
+
+@font-face {
+    font-family: ContentFont;
+    src: url('/resources/fonts/quicksand.ttf') format('truetype'),
+         url('/resources/fonts/quicksand.woff') format('truetype');
+}
+
 body {
+    font-family: ContentFont;
     background-color: #505555;
     padding: 0px;
     margin: 0px;
@@ -12,6 +25,9 @@ a {
 .link {
     color: #bbbbbb;
     &:hover {
+        color: #ffffff;
+    }
+    &.current {
         color: #ffffff;
     }
 }

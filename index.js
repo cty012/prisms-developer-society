@@ -34,6 +34,5 @@ app.get('/gamelist', (req, res) => {
             "release_date": [2020, 12, 31]
         }
     );
-    console.log("data: " + JSON.stringify(data));
     res.send(data);
 })
