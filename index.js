@@ -21,7 +21,7 @@ app.get('/games', (req, res) => {
 
 // Send data
 app.get('/gamelist', (req, res) => {
-    data = [
+    data = Array(5).fill(
         {
             "id": "sample_game",
             "name": "Sample Game",
@@ -33,7 +33,7 @@ app.get('/gamelist', (req, res) => {
             "platforms": ["Windows10", "MacOS", "Linux"],
             "release_date": [2020, 12, 31]
         }
-    ];
-    console.log("data:" + data);
+    );
+    console.log("data: " + JSON.stringify(data));
     res.send(data);
 })
