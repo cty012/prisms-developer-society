@@ -20,3 +20,20 @@ app.get('/games', (req, res) => {
 });
 
 // Send data
+app.get('/gamelist', (req, res) => {
+    data = [
+        {
+            "id": "sample_game",
+            "name": "Sample Game",
+            "authors": [
+                {"id": "daniel_cao", "name": "Daniel Cao"},
+                {"id": "steven_lu", "name": "Steven Lu"}
+            ],
+            "tags": ["multiplayer", "platformer"],
+            "platforms": ["Windows10", "MacOS", "Linux"],
+            "release_date": [2020, 12, 31]
+        }
+    ];
+    console.log("data:" + data);
+    res.send(data);
+})
