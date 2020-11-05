@@ -3,6 +3,8 @@
 @width: 1200px;
 @carousel-width: 720px;
 @carousel-height: 405px;
+@arrow-radius: 20px;
+@arrow-margin: 20px;
 @game-info-padding-w: 40px;
 @game-info-padding-h: 40px;
 @game-info-width: @width - @carousel-width - @game-info-padding-w * 2;
@@ -39,6 +41,27 @@
 #game-img {
     width: @carousel-width;
     height: @carousel-height;
+}
+
+.game-carousel-arrow {
+    opacity: 0.3;
+    &.active:hover {
+        opacity: 0.6;
+    }
+    width: calc(@arrow-radius * 2);
+    height: calc(@arrow-radius * 2);
+    position: relative;
+    top: calc(-@carousel-height / 2 - @arrow-radius);
+}
+
+#game-carousel-arrow-left {
+    .game-carousel-arrow();
+    left: @arrow-margin;
+}
+
+#game-carousel-arrow-right {
+    .game-carousel-arrow();
+    left: calc(@carousel-width - @arrow-radius * 4 - @arrow-margin);
 }
 
 // game info

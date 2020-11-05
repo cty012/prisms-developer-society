@@ -24,17 +24,20 @@ app.get('/games', (req, res) => {
 });
 
 app.get('/games/app/:gameId', (req, res) => {
-    res.render(path.join(__dirname, '/public/views/app/index.ejs'), data = {data: {
-        'id': "sample_game",
-        "name": "Sample Game",
-        "authors": [
-            {"id": "daniel_cao", "name": "Daniel Cao"},
-            {"id": "steven_lu", "name": "Steven Lu"}
-        ],
-        "tags": ["multiplayer", "platformer"],
-        "platforms": ["Windows10", "MacOS", "Linux"],
-        "release_date": [2020, 12, 31]
-    }});
+    res.render(path.join(__dirname, '/public/views/app/index.ejs'), data = {
+        info: {
+            'id': "sample_game",
+            "name": "Sample Game",
+            "authors": [
+                {"id": "daniel_cao", "name": "Daniel Cao"},
+                {"id": "steven_lu", "name": "Steven Lu"}
+            ],
+            "tags": ["multiplayer", "platformer"],
+            "platforms": ["Windows10", "MacOS", "Linux"],
+            "release_date": [2020, 12, 31]
+        },
+        numImgs: 5
+    });
 });
 
 // Send data

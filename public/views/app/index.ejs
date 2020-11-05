@@ -9,8 +9,40 @@
 <script src="/views/app/script.js"></script>
 
 <script>
-data = <%- JSON.stringify(data.data) %>;
-alert(data);
+data = <%- JSON.stringify(data.info) %>;
+numImgs = <%- data.numImgs %>;
+imgId = 0;
+isHidden = {"l": true, "r": true};
+
+function rotateCarousel(num) {
+    imgId = Math.min(Math.max(imgId + num, 0), numImgs - 1);
+    loadGameCarousel(data, imgId, numImgs, isHidden)
+}
+
+function addHidden() {
+    arrow_left = document.getElementById("game-carousel-arrow-left");
+    arrow_right = document.getElementById("game-carousel-arrow-right");
+    if (event.relatedTarget != arrow_left && event.relatedTarget != arrow_right) {
+        arrow_left.classList.add("hidden");
+        isHidden["l"] = true;
+        arrow_right.classList.add("hidden");
+        isHidden["r"] = true;
+    }
+}
+
+function removeHidden() {
+    arrow_left = document.getElementById("game-carousel-arrow-left");
+    arrow_right = document.getElementById("game-carousel-arrow-right");
+    arrow_left.classList.remove("hidden");
+    isHidden["l"] = false;
+    arrow_right.classList.remove("hidden");
+    isHidden["r"] = false;
+}
+
+window.onload = () => {
+    loadGameCarousel(data, imgId, numImgs, isHidden);
+    loadGameInfo(data);
+}
 </script>
 
 </head>
@@ -28,24 +60,8 @@ alert(data);
 <div id="contents">
     <div id="game-title">Sample Game</div>
     <div id="game-introduction">
-        <div id="game-carousel"><img id="game-img" src="/resources/app/sample_game/carousel/1.jpg"></div>
-        <div id="game-info">
-            <div class="game-info-item">Authors:
-                <a class="tag" href="/games/search/?authors=daniel_cao">Daniel Cao</a>
-                <a class="tag" href="/games/search/?authors=steven_lu">Steven Lu</a>
-            </div>
-            <div class="game-info-item">Tags:
-                <a class="tag" href="/games/search/?tags=multiplayer">multiplayer</a>
-                <a class="tag" href="/games/search/?tags=platformer">platformer</a>
-            </div>
-            <div class="game-info-item">Platforms:
-                <a href="/games/search/?platforms=Windows10"><img class="platform-img" src="/resources/icons/platforms/Windows10.svg"></a>
-                <a href="/games/search/?platforms=MacOS"><img class="platform-img" src="/resources/icons/platforms/MacOS.svg"></a>
-                <a href="/games/search/?platforms=Linux"><img class="platform-img" src="/resources/icons/platforms/Linux.svg"></a>
-            </div>
-            <div class="game-info-item">Released on: 31 Dec 2020</div>
-            <div id="game-info-download"><div class="download-button">Download</div>
-        </div>
+        <div id="game-carousel"></div>
+        <div id="game-info"></div>
     </div>
     <div id="game-description">
         <h1>Description</h1>
