@@ -1,0 +1,11 @@
+{
+    "id": "sample_game",
+    "name": "Sample Game",
+    "authors": [
+        {"id": "daniel_cao", "name": "Daniel Cao"},
+        {"id": "steven_lu", "name": "Steven Lu"}
+    ],
+    "tags": ["multiplayer", "platformer"],
+    "platforms": ["Windows", "MacOS", "Linux"],
+    "release_date": [2020, 12, 31]
+}

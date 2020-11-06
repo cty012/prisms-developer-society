@@ -7,6 +7,10 @@ function loadGameCarousel(data, imgId, numImgs, isHidden={"l": false, "r": false
     carousel.innerHTML += `<img id="game-carousel-arrow-right" class="${rightClass}" onclick="rotateCarousel(1)" src="/resources/icons/arrow_right.svg">`;
 }
 
+function loadGameDescription(description) {
+    document.getElementById("game-description").innerHTML = description;
+}
+
 function loadGameInfo(data) {
     gameInfo = document.getElementById("game-info");
     gameInfo.innerHTML = `
