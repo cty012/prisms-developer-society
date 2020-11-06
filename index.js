@@ -33,7 +33,7 @@ app.get('/games/app/:gameId', (req, res) => {
                 {"id": "steven_lu", "name": "Steven Lu"}
             ],
             "tags": ["multiplayer", "platformer"],
-            "platforms": ["Windows10", "MacOS", "Linux"],
+            "platforms": ["Windows", "MacOS", "Linux"],
             "release_date": [2020, 12, 31]
         },
         numImgs: 5
@@ -51,7 +51,7 @@ app.get('/gamelist', (req, res) => {
                 {"id": "steven_lu", "name": "Steven Lu"}
             ],
             "tags": ["multiplayer", "platformer"],
-            "platforms": ["Windows10", "MacOS", "Linux"],
+            "platforms": ["Windows", "MacOS", "Linux"],
             "release_date": [2020, 12, 31]
         }
     );
@@ -59,5 +59,5 @@ app.get('/gamelist', (req, res) => {
 });
 
 app.get('/games/download/:gameId/:platform', (req, res) => {
-    res.download(path.join(__dirname, '/public/resources/app', req.params.gameId, '/product', req.params.platform + '.zip'));
+    res.download(path.join(__dirname, '/public/resources/app', req.params.gameId, '/product', req.params.platform, req.params.gameId + '.zip'));
 });

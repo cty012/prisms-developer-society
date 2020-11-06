@@ -14,7 +14,7 @@ function loadGameInfo(data) {
         ${getTagHTML(data["tags"])}
         ${getPlatformHTML(data["platforms"])}
         ${getReleaseDate(data["release_date"])}
-        <div id="game-info-download"><div class="download-button">Download</div>
+        ${getDownloadDropdown(data["platforms"], data["id"])}
     `;
 }
 
@@ -45,4 +45,16 @@ function getPlatformHTML(platformList) {
 function getReleaseDate(release_date) {
     monthList = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     return `<div class="game-info-item">Released on: ${release_date[2]} ${monthList[release_date[1] - 1]} ${release_date[0]}</div>`;
+}
+
+function getDownloadDropdown(platformList, gameId) {
+    html = ``;
+    platformList.forEach(platform => {
+        html += `<a href="/games/download/${gameId}/${platform}"><div class="download-button">${platform}<img class="platform-img" src="/resources/icons/platforms/${platform}.svg"></div></a>`;
+    });
+    return `
+        <div id="game-info-download"><div class="download-dropdown" onmouseover="showDropdown(this)"; onmouseout="hideDropdown(this);">
+            <img width="25px" height="25px" src="/resources/icons/download.svg">&nbsp;&nbsp;Download<div class="download-dropdown-contents">${html}</div>
+        </div></div>
+    `;
 }

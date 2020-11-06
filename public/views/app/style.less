@@ -9,6 +9,9 @@
 @game-info-padding-h: 40px;
 @game-info-width: @width - @carousel-width - @game-info-padding-w * 2;
 @game-info-height: @carousel-height - @game-info-padding-h * 2;
+@download-dropdown-width: 300px;
+@download-button-width: 200px;
+@download-button-height: 60px;
 
 /* STYLE */
 /* game title */
@@ -97,7 +100,7 @@
     height: calc(0.28 * @game-info-height);
 }
 
-.download-button {
+.download-dropdown {
     color: #eeeeee;
     background-color: #666666;
     &:hover {
@@ -107,9 +110,33 @@
     text-align: center;
     line-height: calc(0.28 * @game-info-height);
     border-radius: 20px;
-    width: 300px;
+    width: @download-dropdown-width;
     height: calc(0.28 * @game-info-height);
     margin-left: calc((@game-info-width - 300px) / 2);
+    position: relative;
+}
+
+.download-dropdown-contents {
+    margin: 1px calc((@download-dropdown-width - @download-button-width) / 2);
+    height: 0px;
+    overflow: hidden;
+    transition: height 0.2s;
+    position: absolute;
+}
+
+.download-button {
+    font-size: 20px;
+    text-align: center;
+    line-height: @download-button-height;
+    background-color: #393d3d;
+    &:hover {
+        background-color: #2d3030;
+    }
+    & * {
+        pointer-events: none;
+    }
+    width: @download-button-width;
+    height: @download-button-height;
 }
 
 /* game-description */
