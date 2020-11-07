@@ -48,7 +48,7 @@ function updateGameList(gameList) {
 function getAuthorHTML(authorList) {
     html = ``;
     authorList.forEach(author => {
-        html += `<a class="tag" href="/games/search/?authors=${author["id"]}">${author["name"]}</a>`;
+        html += `<a class="tag" href="/games/search/?authors=${author["id"]}">${author["name"]}</a> `;
     });
     return `<div class="game-info-item">Authors:${html}</div>`;
 }
@@ -56,7 +56,7 @@ function getAuthorHTML(authorList) {
 function getTagHTML(tagList) {
     html = ``;
     tagList.forEach(tag => {
-        html += `<a class="tag" href="/games/search/?tags=${tag}">${tag}</a>`;
+        html += `<a class="tag" href="/games/search/?tags=${tag}">${tag}</a> `;
     });
     return `<div class="game-info-item">Tags:${html}</div>`;
 }

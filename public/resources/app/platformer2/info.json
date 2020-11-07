@@ -1,0 +1,13 @@
+{
+    "id": "platformer2",
+    "name": "Platformer 2",
+    "authors": [
+        {"id": "daniel_cao", "name": "Daniel Cao"},
+        {"id": "steven_lu", "name": "Steven Lu"},
+        {"id": "jonathan_li", "name": "Jonathan Li"}
+    ],
+    "tags": ["multiplayer", "platformer"],
+    "platforms": ["Windows"],
+    "source_code": true,
+    "release_date": [2020, 8, 8]
+}

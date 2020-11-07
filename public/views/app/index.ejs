@@ -10,7 +10,7 @@
 
 <script>
 data = JSON.parse(`<%- JSON.stringify(data.info) %>`);
-numImgs = parseInt("<%- data.numImgs %>");
+numImgs = parseInt(`<%- data.numImgs %>`);
 description = `<%- data.description %>`;
 imgId = 0;
 isHidden = {"l": true, "r": true};
@@ -42,8 +42,8 @@ function removeHidden() {
 
 function showDropdown(element) {
     dropdown = element.getElementsByClassName("download-dropdown-contents")[0];
-    download_button = element.getElementsByClassName("download-button")[0];
-    targetHeight = parseFloat(getComputedStyle(download_button).height) * data["platforms"].length;
+    download_button_height = parseFloat(getComputedStyle(element.getElementsByClassName("download-button")[0]).height);
+    targetHeight = download_button_height * (data["platforms"].length + (data["source_code"]? 1 : 0));
     dropdown.style.height = targetHeight + "px";
 }
 
@@ -53,6 +53,7 @@ function hideDropdown(element) {
 }
 
 window.onload = () => {
+    loadGameTitle(data["name"])
     loadGameCarousel(data, imgId, numImgs, isHidden);
     loadGameInfo(data);
     loadGameDescription(description);
@@ -72,7 +73,7 @@ window.onload = () => {
     </div>
 </div>
 <div id="contents">
-    <div id="game-title">Sample Game</div>
+    <div id="game-title"></div>
     <div id="game-introduction">
         <div id="game-carousel"></div>
         <div id="game-info"></div>

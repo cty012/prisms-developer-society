@@ -32,7 +32,7 @@ class AppManager {
         return this.readFile(path.join(id, "/description.html"));
     }
     getNumImgs(id) {
-        return this.getFiles(path.join(id, "/carousel")).filter(file => file.endsWith(".jpg")).length;
+        return this.getFiles(path.join(id, "/carousel")).filter(file => file.toLowerCase().endsWith(".png")).length;
     }
 }
 

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 263 263" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>.cls-1{isolation:isolate;}.cls-2{opacity:0.15;mix-blend-mode:multiply;}.cls-3{fill:#c3002f;}.cls-4{fill:#dd0031;}.cls-5{fill:none;stroke:#fff;stroke-linecap:round;stroke-miterlimit:10;stroke-width:20px;}</style>
+  </defs>
+  <title>code-icon</title>
+  <g class="cls-1" transform="matrix(1, 0, 0, 1, 2.99929, 3.000474)">
+    <g id="Layer_2" data-name="Layer 2">
+      <g id="Design">
+        <path d="M 61.181 237.158 C -22.868 185.748 -19.702 62.705 66.88 15.678 C 152.18 -30.591 255.975 31.098 256 128.08 C 256.032 149.417 250.698 170.418 240.486 189.157 C 205.485 253.488 123.682 275.387 61.181 237.158 Z" style="fill: rgb(238, 238, 238);"/>
+        <polyline points="82.128 89.275 41.738 132.154 76.497 166.885" class="cls-5" style="stroke: rgb(57, 57, 57);"/>
+        <polyline class="cls-5" points="173.872 166.885 214.252 123.995 179.504 89.275" style="stroke: rgb(57, 57, 57);"/>
+        <line class="cls-5" x1="145.86" y1="68.3" x2="110.141" y2="187.86" style="stroke: rgb(57, 57, 57);"/>
+      </g>
+    </g>
+  </g>
+</svg>
