@@ -7,7 +7,7 @@
         {"id": "jonathan_li", "name": "Jonathan Li"}
     ],
     "tags": ["multiplayer", "platformer"],
-    "platforms": ["Windows"],
+    "platforms": ["Windows", "MacOS"],
     "source_code": true,
     "release_date": [2020, 8, 8]
 }
