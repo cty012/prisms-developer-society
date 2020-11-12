@@ -3,7 +3,7 @@
 @font: HeaderFont;
 
 // position
-@height: 100px;
+@height: 80px;
 @icon-holder-width: 100px;
 @icon-width: 60px;
 @title-width: 400px;
@@ -31,9 +31,9 @@
 }
 
 #icon {
-    width: 60px;
-    height: 60px;
-    margin: calc((@icon-holder-width - @icon-width) / 2);
+    width: @icon-width;
+    height: @icon-width;
+    margin: calc((@height - @icon-width) / 2) calc((@icon-holder-width - @icon-width) / 2);
 }
 
 // title (350 * 100)
