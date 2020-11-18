@@ -31,7 +31,7 @@ function updateGameList(gameList) {
         element.innerHTML += `
             <div class="game-block">
                 <a href="/games/app/${gameInfo["id"]}">
-                    <img class="game-img" src="/resources/app/${gameInfo["id"]}/cover.jpg">
+                    <img class="game-img" src="/resources/app/${gameInfo["id"]}/cover.png">
                 </a>
                 <div class="game-info">
                     <div class="game-info-name"><a class="link" href="/games/app/${gameInfo["id"]}">${gameInfo["name"]}</a></div>
