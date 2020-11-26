@@ -29,7 +29,7 @@ function loadGameInfo(data) {
 function getAuthorHTML(authorList) {
     html = ``;
     authorList.forEach(author => {
-        html += `<a class="tag" href="/games/search/?authors=${author["id"]}">${author["name"]}</a> `;
+        html += `<a class="tag" href="/games/search?authors=${author["id"]}">${author["name"]}</a> `;
     });
     return `<div class="game-info-item">Authors:${html}</div>`;
 }
@@ -37,7 +37,7 @@ function getAuthorHTML(authorList) {
 function getTagHTML(tagList) {
     html = ``;
     tagList.forEach(tag => {
-        html += `<a class="tag" href="/games/search/?tags=${tag}">${tag}</a> `;
+        html += `<a class="tag" href="/games/search?tags=${tag}">${tag}</a> `;
     });
     return `<div class="game-info-item">Tags:${html}</div>`;
 }
@@ -45,7 +45,7 @@ function getTagHTML(tagList) {
 function getPlatformHTML(platformList) {
     html = ``;
     platformList.forEach(platform => {
-        html += `<a href="/games/search/?platforms=${platform}"><img class="platform-img" src="/resources/icons/platforms/${platform}.svg"></a>`;
+        html += `<a href="/games/search?platforms=${platform}"><img class="platform-img" src="/resources/icons/platforms/${platform}.svg"></a>`;
     });
     return `<div class="game-info-item">Platforms:${html}</div>`;
 }

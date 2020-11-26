@@ -51,6 +51,10 @@ app.get("/games", (req, res) => {
     res.sendFile(path.join(__dirname, "/public/views/games/index.html"));
 });
 
+app.get("/games/search", (req, res) => {
+    res.sendFile(path.join(__dirname, "/public/views/games/index.html"));
+});
+
 app.get("/games/app/:gameId", (req, res) => {
     res.render(path.join(__dirname, "/public/views/app/index.ejs"), data = {
         info: appManager.getInfo(req.params.gameId),
