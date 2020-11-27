@@ -73,6 +73,15 @@ app.get("/gamelist", (req, res) => {
 });
 
 app.get("/games/download/:gameId/:platform", (req, res) => {
-    gameName = appManager.getInfo(req.params.gameId)["name"];
-    res.download(path.join(__dirname, "/public/resources/app", req.params.gameId, "/product", req.params.platform, gameName + ".zip"));
+    extensions = {
+        "Windows": ".win.zip",
+        "MacOS": ".mac.zip",
+        "Source Code": ".src.zip",
+        all: ["Windows", "MacOS", "Source Code"],
+        default: ".zip"
+    }
+    var platform = req.params.platform;
+    var gameId = req.params.gameId;
+    var fileName = appManager.getInfo(gameId)["name"] + (extensions.all.includes(platform)? extensions[platform] : extensions.default);
+    res.download(path.join(__dirname, "/public/resources/app", gameId, "/product", platform, fileName));
 });
