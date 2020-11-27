@@ -1,0 +1,11 @@
+{
+    "id": "flappyfrog",
+    "name": "Flappy Frog",
+    "authors": [
+        {"id": "andy_wang", "name": "Andy Wang"}
+    ],
+    "tags": ["politics", "single player"],
+    "platforms": ["Windows", "MacOS"],
+    "source_code": true,
+    "release_date": [2020, 11, 27]
+}

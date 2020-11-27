@@ -1,0 +1,12 @@
+{
+    "id": "pygenerals",
+    "name": "Py-Generals",
+    "authors": [
+        {"id": "daniel_cao", "name": "Daniel Cao"},
+        {"id": "steven_lu", "name": "Steven Lu"}
+    ],
+    "tags": ["strategy", "multiplayer"],
+    "platforms": ["Windows", "MacOS"],
+    "source_code": true,
+    "release_date": [2020, 8, 16]
+}
