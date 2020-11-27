@@ -6,7 +6,11 @@ function loadGameCarousel(data, imgId, numImgs, isHidden={"l": false, "r": false
     carousel = document.getElementById("game-carousel");
     leftClass = (isHidden["l"]? "hidden" : "") + " " + (imgId > 0? "active" : "");
     rightClass = (isHidden["r"]? "hidden" : "") + " " + (imgId < numImgs - 1? "active" : "");
-    carousel.innerHTML = `<img id="game-img" onmouseover="removeHidden();" onmouseout="addHidden();" src="/resources/app/${data["id"]}/carousel/${imgId}.png">`;
+    carousel.innerHTML = `
+        <div id="game-img-holder" onmouseover="removeHidden();" onmouseout="addHidden();">
+            <img id="game-img"  src="/resources/app/${data["id"]}/carousel/${imgId}.png">
+        </div>
+    `;
     carousel.innerHTML += `<img id="game-carousel-arrow-left" class="${leftClass}" onclick="rotateCarousel(-1)" src="/resources/icons/arrow_left.svg">`;
     carousel.innerHTML += `<img id="game-carousel-arrow-right" class="${rightClass}" onclick="rotateCarousel(1)" src="/resources/icons/arrow_right.svg">`;
 }
