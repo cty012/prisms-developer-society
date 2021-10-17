@@ -1,7 +1,10 @@
 const express = require("express");
+const { networkInterfaces } = require('os');
 const process = require("process");
 const path = require("path");
 const fs = require("fs");
+
+const SETTINGS = JSON.parse(fs.readFileSync("settings.json", {encoding: "utf8"}));
 
 // Change working directory to /public
 process.chdir(path.join(__dirname, "public"));
@@ -9,7 +12,24 @@ process.chdir(path.join(__dirname, "public"));
 // Set up the server
 const app = express();
 app.use(express.static(path.join(__dirname, "public")));
-app.listen("8080");
+app.listen(SETTINGS.port);
+
+// obtain IPv4
+const nets = networkInterfaces();
+const results = {}
+
+for (const name of Object.keys(nets)) {
+    for (const net of nets[name]) {
+        // Skip over non-IPv4 and internal (i.e. 127.0.0.1) addresses
+        if (net.family === 'IPv4' && !net.internal) {
+            if (!results[name]) {
+                results[name] = [];
+            }
+            results[name].push(net.address);
+        }
+    }
+}
+console.log(results);
 
 // file system
 class AppManager {
@@ -56,6 +76,10 @@ app.get("/games/search", (req, res) => {
 });
 
 app.get("/games/app/:gameId", (req, res) => {
+    if (!appManager.getAppList().includes(req.params.gameId)) {
+        res.send("Game does not exist!!!");
+        return;
+    }
     res.render(path.join(__dirname, "/public/views/app/index.ejs"), data = {
         info: appManager.getInfo(req.params.gameId),
         numImgs: appManager.getNumImgs(req.params.gameId),
